@@ -1,4 +1,4 @@
-baseURL = 'https://sjorsvanmierlo.nl/'
+baseURL = 'https://sjorsvanmierlo.nl/sjorsvanmierlo.nl'
 languageCode = 'en-us'
 title = 'Sjors van Mierlo'
 theme = 'hugo-blog-awesome'
