@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Android Dev: One Module at a Time | Sjors van Mierlo</title>
+<meta property="og:title" content="Android Dev: One Module at a Time | Sjors van Mierlo" />
+<meta name="twitter:title" content="Android Dev: One Module at a Time | Sjors van Mierlo" />
+<meta itemprop="name" content="Android Dev: One Module at a Time | Sjors van Mierlo" />
+<meta name="application-name" content="Android Dev: One Module at a Time | Sjors van Mierlo" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="">
+<meta itemprop="description" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:description" content="" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/posts/one-module-at-a-time/one-module-at-a-time/" title="" />
+
+
+
+
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2024-07-16T20:55:57&#43;0200 />
+    <meta property="article:published_time" content=2024-07-16T20:55:57&#43;0200 />
+
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Android Dev: One Module at a Time",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2024-07-16",
+        "description": "",
+        "wordCount":  582 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2024-07-16",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Sjors van Mierlo"
+        }
+    }
+    </script>
+
+
+<meta name="generator" content="Hugo 0.128.2">
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/posts/one-module-at-a-time/one-module-at-a-time/">
+    <link href="/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    </head>
+<body data-theme = "" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title></title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/">
+                        home
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/posts/">
+                        posts
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/notes/">
+                        notes
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/about/">
+                        about
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Android Dev: One Module at a Time</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2024-07-16T20:55:57&#43;02:00" itemprop="datePublished"> Jul 16, 2024 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <hr>
+<p>In this article I will explain the process of adding (multiple) modules to your Android project and how to start using them. 
+But first, let&rsquo;s begin with an explanation of the advantages that multi-module projects can provide for you.</p>
+<h1 id="advantages">Advantages</h1>
+<h2 id="modularity-and-maintainability">Modularity and maintainability</h2>
+<p>Creating smaller and specialized modules makes the codebase more manageable and easier to maintain. For instance creating smaller feature-modules makes the feature easier to understand, test and update.</p>
+<h2 id="code-reusability">Code reusability</h2>
+<p>Modules promote code reusability by allowing you to encapsulate common functionalities or components. These can be reused across different parts of your app or modules, reducing redundancy and improving efficiency.</p>
+<h2 id="parallel-development">Parallel Development</h2>
+<p>Multiple modules also mean different teams or developers can work on separate modules simultaneously. This approach accelerates the development process and allows for quicker iterations.</p>
+<h2 id="isolation-and-encapsulation">Isolation and encapsulation</h2>
+<p>Using modules enables you to develop en test in isolation. This means you can easily find issues within a specific module and fix these issues without affecting the rest of the app, ensuring a more robust and stable codebase.</p>
+<h2 id="dependency-management">Dependency Management</h2>
+<p>Each module can manage its own set of dependencies, reducing conflicts or issues and also enforce rules between modules. This will lead to a more stable and reliable app.</p>
+<h2 id="reduced-build-times">Reduced build times</h2>
+<p>Modules can lead to reduced build times, especially during development and testing. This way the developer can work even faster meaning faster iteration cycles and quicker feedback.</p>
+<h2 id="clearer-architecture">Clearer architecture</h2>
+<p>Using multiple modules enables the user to enforce the principles of clean architecture. Applying those principles results in a well-organised and understandable codebase, making maintenance and future development more efficient.</p>
+<h2 id="team-collaboration">Team collaboration</h2>
+<p>Different teams or developers can take ownership of specific modules, leading to better collaboration and more efficient development.
+In summary, creating a multi-module project in Android is a powerful development practice that leads to a more organized, efficient and maintainable codebase. It enables teams to work in parallel, encourges code reuse and ultimatley results in higher-quality apps.</p>
+<hr>
+<h1 id="creating-a-newmodule">Creating a new module</h1>
+<p>For this post I created a new Android project with Android Studio called &lsquo;MyApp&rsquo;.</p>
+<h2 id="adding-your-firstmodule">Adding your first module</h2>
+<p>Open the Project structure via the File menu or use the shortcut:  ⌘+;
+Select the Modules option on the left. To create your first module press the + button in the modules column.</p>
+<p>[image] The project structure dialog.</p>
+<h2 id="creating-the-newmodule">Creating the new module</h2>
+<p>In this example I will be creating a domain module in preparation for my clean architecture Android project. I will be creating the module using the &lsquo;Java or Kotlin Library&rsquo; template.</p>
+<p>[image]The create new module dialog that is shown after pressing the + button</p>
+<h2 id="configuring-the-dependencies">Configuring the dependencies</h2>
+<p>After creating the new module we need to ensure that the module is added to the project. Check the <code>settings.gradle.kts</code> file to make sure the new module is included.</p>
+<pre tabindex="0"><code>include(&#34;:app&#34;, &#34;:domain&#34;)
+</code></pre><p>Using the new module in the app module also requires adding the dependency to the <code>build.gradle.kts</code> file of the app project.</p>
+<pre tabindex="0"><code>dependencies {
+    implementation(project(&#34;:domain&#34;))
+    // ...
+}
+</code></pre><h2 id="ready-to-build-andrun">Ready to build and run!</h2>
+<p>You&rsquo;re now ready to build and run the app! You are also able to access the <code>MyClass.kt</code> in you <code>MainActivity.kt</code> due to the added dependency!</p>
+<pre tabindex="0"><code>package nl.sjorsvanmierlo.myapp
+
+import nl.sjorsvanmierlo.myapp.domain.MyClass
+// other imports...
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val myClass = MyClass()
+        // We are able to use the MyClass from the domain module!
+        print(myClass.helloWorld())
+    }
+}
+</code></pre><h1 id="conclusion">Conclusion</h1>
+<p>After following this guide you are now able to set up a multi-module project and benefit of the advantages mentioned above.</p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="https://github.com/sjorsvanmierlo" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://instagram.com/sjorsvanmierlo" target="_blank" rel="noopener noreferrer me"
+    title="Instagram">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
+</svg>
+</a>
+<a href="https://linkedin.com/in/sjorsvanmierlo" target="_blank" rel="noopener noreferrer me"
+    title="Linkedin">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+    <rect x="2" y="9" width="4" height="12"></rect>
+    <circle cx="4" cy="4" r="2"></circle>
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2024 Sjors van Mierlo.
+        
+    </small>
+</footer><a href="#" title="" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

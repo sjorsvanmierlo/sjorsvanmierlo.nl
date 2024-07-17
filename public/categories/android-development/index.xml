@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android Development on Sjors van Mierlo</title>
+    <link>http://localhost:1313/categories/android-development/</link>
+    <description>Recent content in Android Development on Sjors van Mierlo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jan 2024 20:55:57 +0200</lastBuildDate><atom:link href="http://localhost:1313/categories/android-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The advantages of using modules in your Android project</title>
+      <link>http://localhost:1313/posts/the-advantages-of-using-modules-in-your-android-project/</link>
+      <pubDate>Mon, 01 Jan 2024 20:55:57 +0200</pubDate>
+      
+      <guid>http://localhost:1313/posts/the-advantages-of-using-modules-in-your-android-project/</guid>
+      
+      <description>This article will show you how to add and use multiple modules in your Android project. First, let&amp;rsquo;s explore the benefits of multi-module projects.
+Advantages Modularity and maintainability Creating smaller, specialized modules make your codebase easier to manage and maintain. For example, feature modules are simpler to understand, test, and update.
+Code reusability Modules promote code reusability by allowing you to encapsulate common functionalities or components. You can reuse these modules in different app sections, saving time and preventing duplicate code.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

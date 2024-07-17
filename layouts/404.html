@@ -1,0 +1,17 @@
+{{ define "title"}}
+404 | NOT FOUND
+{{ end }}
+
+{{ define "main"}}
+<div class="wrapper">
+    <main class="main-404" aria-label="Content">
+        <h1>404</h1>
+        <h2>This is not the web page you are looking for.</h2>
+        <p>
+            <a href="{{ .Site.Home.RelPermalink }}">
+                He can go about his homepage
+            </a>
+        </p>
+    </main>
+</div>
+{{ end }}

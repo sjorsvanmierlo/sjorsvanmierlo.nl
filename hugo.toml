@@ -1,0 +1,55 @@
+baseURL = 'https://sjorsvanmierlo.nl/'
+languageCode = 'en-us'
+title = 'Sjors van Mierlo'
+theme = 'hugo-blog-awesome'
+
+[outputs]
+    home = ["HTML", "RSS", "JSON"]
+
+[params]
+  goToTop = true
+
+[params.author]
+  avatar = "author.jpeg"
+  name = "Sjors van Mierlo"
+  intro = "Hi 👋🏻"
+  description = "I am Sjors van Mierlo a Java and Kotlin developer with a passion for building maintainable software"
+
+# Menu
+[menu]
+  [[menu.main]] 
+    # The page reference (pageRef) is useful for menu highlighting
+    # When pageRef is set, setting `url` is optional; it will be used as a fallback if the page is not found.
+    pageRef = "/"
+    name = "home"
+    url = "/"
+    weight = 10
+  [[menu.main]]
+    pageRef = "posts"
+    name = "posts"
+    url = "/posts/"
+    weight = 20
+#  
+#  [[menu.main]]
+#    pageRef = "categories"
+#    name = "categories"
+#    url = "/categories/"
+#    weight = 30
+  [[menu.main]]
+    pageRef = "about"
+    name = "about"
+    url = "/about"
+    weight = 40
+
+# Social icons
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/sjorsvanmierlo"
+
+[[params.socialIcons]]
+name = "instagram"
+url = "https://instagram.com/sjorsvanmierlo"
+
+[[params.socialIcons]]
+name = "linkedin"
+url = "https://linkedin.com/in/sjorsvanmierlo"
