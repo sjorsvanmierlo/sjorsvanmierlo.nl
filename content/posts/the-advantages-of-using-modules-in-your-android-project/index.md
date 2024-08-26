@@ -2,7 +2,7 @@
 title = 'The advantages of using modules in your Android project'
 date = 2024-01-01T20:55:57+02:00
 categories = ['Android development']
-tags = ['modularization', 'android']
+tags = ['blog', 'modularization', 'android']
 +++ 
 
 ---
