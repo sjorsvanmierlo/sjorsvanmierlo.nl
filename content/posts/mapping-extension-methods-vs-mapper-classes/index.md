@@ -17,7 +17,7 @@ Extension methods in Kotlin are a powerful feature that allows you to add new fu
 
 Here is an example where a simple DTO (Data Transfer Object) is converted to a domain model:
 
-```
+```R
 // Data Transfer Object (DTO)
 data class UserDto(val id: String, val name: String)
 
@@ -59,7 +59,7 @@ A mapper class is a separate component dedicated to converting data. This approa
 
 Here is an example of a mapper class:
 
-```
+```R
 // Data Transfer Object (DTO)
 data class UserDto(val id: String, val name: String)
 

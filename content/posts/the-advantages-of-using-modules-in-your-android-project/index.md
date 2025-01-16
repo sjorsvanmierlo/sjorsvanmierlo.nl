@@ -53,11 +53,11 @@ In this example I will be creating a domain module in preparation for my clean a
 ## Configuring the dependencies
 After creating the new module we need to ensure that the module is added to the project. Check the `settings.gradle.kts` file to make sure the new module is included.
 
-```
+```R
 include(":app", ":domain")
 ```
 Using the new module in the app module also requires adding the dependency to the `build.gradle.kts` file of the app project.
-```
+```R
 dependencies {
     implementation(project(":domain"))
     // ...
@@ -66,7 +66,7 @@ dependencies {
 
 ## Ready to build and run!
 You're now ready to build and run the app! You are also able to access the `MyClass.kt` in you `MainActivity.kt` due to the added dependency!
-```
+```R
 package nl.sjorsvanmierlo.myapp
 
 import nl.sjorsvanmierlo.myapp.domain.MyClass

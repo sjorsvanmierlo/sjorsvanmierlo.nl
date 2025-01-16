@@ -180,27 +180,27 @@ stroke-linejoin="round" class="feather feather-home">
 <p>Extension methods in Kotlin are a powerful feature that allows you to add new functions to existing classes without modifying them. This makes them ideal for simple, straightforward mapping logic.</p>
 <h3 id="example-mapping-with-extension-methods"><strong>Example: Mapping with Extension Methods</strong></h3>
 <p>Here is an example where a simple DTO (Data Transfer Object) is converted to a domain model:</p>
-<pre tabindex="0"><code>// Data Transfer Object (DTO)
-data class UserDto(val id: String, val name: String)
-
-// Domain model
-data class User(val userId: String, val fullName: String)
-
-// Extension Method for mapping
-fun UserDto.toDomainModel(): User {
-    return User(
-        userId = this.id,
-        fullName = this.name
-    )
-}
-
-// Usage
-fun main() {
-    val userDto = UserDto(id = &#34;123&#34;, name = &#34;John Doe&#34;)
-    val user = userDto.toDomainModel()
-    println(user) // Output: User(userId=123, fullName=John Doe)
-}
-</code></pre><h3 id="advantages-of-extension-methods"><strong>Advantages of Extension Methods</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="o">//</span> <span class="n">Data</span> <span class="n">Transfer</span> <span class="nf">Object </span><span class="p">(</span><span class="n">DTO</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="n">class</span> <span class="nf">UserDto</span><span class="p">(</span><span class="n">val</span> <span class="n">id</span><span class="o">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">val</span> <span class="n">name</span><span class="o">:</span> <span class="n">String</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="n">Domain</span> <span class="n">model</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="n">class</span> <span class="nf">User</span><span class="p">(</span><span class="n">val</span> <span class="n">userId</span><span class="o">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">val</span> <span class="n">fullName</span><span class="o">:</span> <span class="n">String</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="n">Extension</span> <span class="n">Method</span> <span class="kr">for</span> <span class="n">mapping</span>
+</span></span><span class="line"><span class="cl"><span class="n">fun</span> <span class="nf">UserDto.toDomainModel</span><span class="p">()</span><span class="o">:</span> <span class="n">User</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kr">return</span> <span class="nf">User</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="n">userId</span> <span class="o">=</span> <span class="n">this.id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="n">fullName</span> <span class="o">=</span> <span class="n">this.name</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="n">Usage</span>
+</span></span><span class="line"><span class="cl"><span class="n">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">val</span> <span class="n">userDto</span> <span class="o">=</span> <span class="nf">UserDto</span><span class="p">(</span><span class="n">id</span> <span class="o">=</span> <span class="s">&#34;123&#34;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;John Doe&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">val</span> <span class="n">user</span> <span class="o">=</span> <span class="nf">userDto.toDomainModel</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">println</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="o">//</span> <span class="n">Output</span><span class="o">:</span> <span class="nf">User</span><span class="p">(</span><span class="n">userId</span><span class="o">=</span><span class="m">123</span><span class="p">,</span> <span class="n">fullName</span><span class="o">=</span><span class="n">John</span> <span class="n">Doe</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="advantages-of-extension-methods"><strong>Advantages of Extension Methods</strong></h3>
 <ul>
 <li>
 <p><strong>Compact and readable</strong>: Less boilerplate code.</p>
@@ -217,30 +217,30 @@ fun main() {
 <p>A mapper class is a separate component dedicated to converting data. This approach follows the <strong>Single Responsibility Principle</strong> (SRP) and is ideal for more complex or reusable mappings.</p>
 <h3 id="example-mapping-with-a-mapper-class"><strong>Example: Mapping with a Mapper Class</strong></h3>
 <p>Here is an example of a mapper class:</p>
-<pre tabindex="0"><code>// Data Transfer Object (DTO)
-data class UserDto(val id: String, val name: String)
-
-// Domain model
-data class User(val userId: String, val fullName: String)
-
-// Mapper Class
-class UserMapper {
-    fun mapToDomain(userDto: UserDto): User {
-        return User(
-            userId = userDto.id,
-            fullName = userDto.name
-        )
-    }
-}
-
-// Usage
-fun main() {
-    val userDto = UserDto(id = &#34;123&#34;, name = &#34;John Doe&#34;)
-    val mapper = UserMapper()
-    val user = mapper.mapToDomain(userDto)
-    println(user) // Output: User(userId=123, fullName=John Doe)
-}
-</code></pre><h3 id="advantages-of-mapper-classes"><strong>Advantages of Mapper Classes</strong></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"><span class="o">//</span> <span class="n">Data</span> <span class="n">Transfer</span> <span class="nf">Object </span><span class="p">(</span><span class="n">DTO</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="n">class</span> <span class="nf">UserDto</span><span class="p">(</span><span class="n">val</span> <span class="n">id</span><span class="o">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">val</span> <span class="n">name</span><span class="o">:</span> <span class="n">String</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="n">Domain</span> <span class="n">model</span>
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="n">class</span> <span class="nf">User</span><span class="p">(</span><span class="n">val</span> <span class="n">userId</span><span class="o">:</span> <span class="n">String</span><span class="p">,</span> <span class="n">val</span> <span class="n">fullName</span><span class="o">:</span> <span class="n">String</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="n">Mapper</span> <span class="n">Class</span>
+</span></span><span class="line"><span class="cl"><span class="n">class</span> <span class="n">UserMapper</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fun</span> <span class="nf">mapToDomain</span><span class="p">(</span><span class="n">userDto</span><span class="o">:</span> <span class="n">UserDto</span><span class="p">)</span><span class="o">:</span> <span class="n">User</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="kr">return</span> <span class="nf">User</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">userId</span> <span class="o">=</span> <span class="n">userDto.id</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="n">fullName</span> <span class="o">=</span> <span class="n">userDto.name</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">//</span> <span class="n">Usage</span>
+</span></span><span class="line"><span class="cl"><span class="n">fun</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">val</span> <span class="n">userDto</span> <span class="o">=</span> <span class="nf">UserDto</span><span class="p">(</span><span class="n">id</span> <span class="o">=</span> <span class="s">&#34;123&#34;</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s">&#34;John Doe&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">val</span> <span class="n">mapper</span> <span class="o">=</span> <span class="nf">UserMapper</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">val</span> <span class="n">user</span> <span class="o">=</span> <span class="nf">mapper.mapToDomain</span><span class="p">(</span><span class="n">userDto</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">println</span><span class="p">(</span><span class="n">user</span><span class="p">)</span> <span class="o">//</span> <span class="n">Output</span><span class="o">:</span> <span class="nf">User</span><span class="p">(</span><span class="n">userId</span><span class="o">=</span><span class="m">123</span><span class="p">,</span> <span class="n">fullName</span><span class="o">=</span><span class="n">John</span> <span class="n">Doe</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="advantages-of-mapper-classes"><strong>Advantages of Mapper Classes</strong></h3>
 <ul>
 <li>
 <p><strong>Scalability</strong>: Ideal for complex mappings.</p>
