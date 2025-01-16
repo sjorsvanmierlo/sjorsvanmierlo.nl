@@ -2,30 +2,39 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/tags/android/</loc>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/tags/android/</loc>
+    <lastmod>2025-01-16T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/categories/android-development/</loc>
+    <lastmod>2025-01-16T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/tags/architecture/</loc>
+    <lastmod>2025-01-16T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/tags/blog/</loc>
+    <lastmod>2025-01-16T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/categories/</loc>
+    <lastmod>2025-01-16T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/posts/mapping-extension-methods-vs-mapper-classes/</loc>
+    <lastmod>2025-01-16T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/posts/</loc>
+    <lastmod>2025-01-16T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/</loc>
+    <lastmod>2025-01-16T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/tags/</loc>
+    <lastmod>2025-01-16T12:00:00+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/tags/modularization/</loc>
     <lastmod>2024-01-01T20:55:57+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/android-development/</loc>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/posts/the-advantages-of-using-modules-in-your-android-project/</loc>
     <lastmod>2024-01-01T20:55:57+02:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2024-01-01T20:55:57+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/modularization/</loc>
-    <lastmod>2024-01-01T20:55:57+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2024-01-01T20:55:57+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2024-01-01T20:55:57+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2024-01-01T20:55:57+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/the-advantages-of-using-modules-in-your-android-project/</loc>
-    <lastmod>2024-01-01T20:55:57+02:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://localhost:1313/sjorsvanmierlo.nl/about/</loc>
   </url>
 </urlset>

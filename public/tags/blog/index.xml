@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Modularization on Sjors van Mierlo</title>
-    <link>http://localhost:1313/sjorsvanmierlo.nl/tags/modularization/</link>
-    <description>Recent content in Modularization on Sjors van Mierlo</description>
+    <title>Blog on Sjors van Mierlo</title>
+    <link>http://localhost:1313/sjorsvanmierlo.nl/tags/blog/</link>
+    <description>Recent content in Blog on Sjors van Mierlo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2024 20:55:57 +0200</lastBuildDate><atom:link href="http://localhost:1313/sjorsvanmierlo.nl/tags/modularization/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2025 12:00:00 +0200</lastBuildDate><atom:link href="http://localhost:1313/sjorsvanmierlo.nl/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kotlin extension methods vs mapper classes for data transformation</title>
+      <link>http://localhost:1313/sjorsvanmierlo.nl/posts/mapping-extension-methods-vs-mapper-classes/</link>
+      <pubDate>Thu, 16 Jan 2025 12:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/sjorsvanmierlo.nl/posts/mapping-extension-methods-vs-mapper-classes/</guid>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;As an Android Developer like me, you&amp;rsquo;re likely familiar with the concept of data mapping: converting data between different layers of your application, such as from the data layer to the domain layer or presentation layer. Kotlin offers two popular ways to achieve this: &lt;strong&gt;extension methods&lt;/strong&gt; and &lt;strong&gt;mapper classes&lt;/strong&gt;. But when should you use which approach? In this blog post, we&amp;rsquo;ll compare both methods and demonstrate how to use them in practice.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>The advantages of using modules in your Android project</title>
       <link>http://localhost:1313/sjorsvanmierlo.nl/posts/the-advantages-of-using-modules-in-your-android-project/</link>

@@ -1,12 +1,13 @@
-<!DOCTYPE html><html lang="en-us"><head><script src="/sjorsvanmierlo.nl/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=sjorsvanmierlo.nl/livereload" data-no-instant defer></script><meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/sjorsvanmierlo.nl/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=sjorsvanmierlo.nl/livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Sjors van Mierlo | Sjors van Mierlo</title>
-<meta property="og:title" content="Sjors van Mierlo | Sjors van Mierlo" />
-<meta name="twitter:title" content="Sjors van Mierlo | Sjors van Mierlo" />
-<meta itemprop="name" content="Sjors van Mierlo | Sjors van Mierlo" />
-<meta name="application-name" content="Sjors van Mierlo | Sjors van Mierlo" />
+<title itemprop="name">Kotlin extension methods vs mapper classes for data transformation | Sjors van Mierlo</title>
+<meta property="og:title" content="Kotlin extension methods vs mapper classes for data transformation | Sjors van Mierlo" />
+<meta name="twitter:title" content="Kotlin extension methods vs mapper classes for data transformation | Sjors van Mierlo" />
+<meta itemprop="name" content="Kotlin extension methods vs mapper classes for data transformation | Sjors van Mierlo" />
+<meta name="application-name" content="Kotlin extension methods vs mapper classes for data transformation | Sjors van Mierlo" />
 <meta property="og:site_name" content="" />
 
 <meta name="description" content="">
@@ -17,20 +18,61 @@
 <meta property="og:locale" content="en-us" />
 <meta name="language" content="en-us" />
 
-  <link rel="alternate" hreflang="en" href="http://localhost:1313/sjorsvanmierlo.nl/" title="" />
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/sjorsvanmierlo.nl/posts/mapping-extension-methods-vs-mapper-classes/" title="" />
 
 
 
 
+
+    
+    
+    
+
+    <meta property="og:type" content="article" />
+    <meta property="og:article:published_time" content=2025-01-16T12:00:00&#43;0200 />
+    <meta property="article:published_time" content=2025-01-16T12:00:00&#43;0200 />
+    <meta property="og:url" content="http://localhost:1313/sjorsvanmierlo.nl/posts/mapping-extension-methods-vs-mapper-classes/" />
+
+    
+    <meta property="og:article:author" content="Sjors van Mierlo" />
+    <meta property="article:author" content="Sjors van Mierlo" />
+    <meta name="author" content="Sjors van Mierlo" />
+    
+    
+
+    
+
+    <script defer type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Kotlin extension methods vs mapper classes for data transformation",
+        "author": {
+        "@type": "Person",
+        "name": ""
+        },
+        "datePublished": "2025-01-16",
+        "description": "",
+        "wordCount":  506 ,
+        "mainEntityOfPage": "True",
+        "dateModified": "2025-01-16",
+        "image": {
+        "@type": "imageObject",
+        "url": ""
+        },
+        "publisher": {
+        "@type": "Organization",
+        "name": "Sjors van Mierlo"
+        }
+    }
+    </script>
 
 
 <meta name="generator" content="Hugo 0.140.2">
 
     
 
-    <link rel="canonical" href="http://localhost:1313/sjorsvanmierlo.nl/">
-    <link href="/sjorsvanmierlo.nl/index.xml" rel="alternate" type="application/rss+xml" title="Sjors van Mierlo">
-    <link href="/sjorsvanmierlo.nl/index.xml" rel="feed" type="application/rss+xml" title="Sjors van Mierlo">
+    <link rel="canonical" href="http://localhost:1313/sjorsvanmierlo.nl/posts/mapping-extension-methods-vs-mapper-classes/">
     <link href="/sjorsvanmierlo.nl/style.min.d43bc6c79baa87f006efb2b92be952faeedeb1a3ab626c1d6abda52eae049355.css" rel="stylesheet">
     <link href="/sjorsvanmierlo.nl/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -54,7 +96,7 @@
     <link rel="icon" type="image/svg+xml" href="/sjorsvanmierlo.nl/icons/favicon.svg">
 
     </head>
-<body data-theme="auto" class="notransition">
+<body data-theme = "" class="notransition">
 
 <script src="/sjorsvanmierlo.nl/js/theme.js"></script>
 
@@ -81,14 +123,14 @@ stroke-linejoin="round" class="feather feather-home">
                 
                 
                 <li>
-                    <a class="menu-link active" href="/sjorsvanmierlo.nl/">
+                    <a class="menu-link " href="/sjorsvanmierlo.nl/">
                         home
                     </a>
                     
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/sjorsvanmierlo.nl/posts/">
+                    <a class="menu-link active" href="/sjorsvanmierlo.nl/posts/">
                         posts
                     </a>
                     
@@ -116,56 +158,136 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper">
-        
 
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Kotlin extension methods vs mapper classes for data transformation</h1>
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-01-16T12:00:00&#43;02:00" itemprop="datePublished"> Jan 16, 2025 </time>
+                </div>
+                
+            </header>
+            
+            <div class="page-content">
+                <hr>
+<p>As an Android Developer like me, you&rsquo;re likely familiar with the concept of data mapping: converting data between different layers of your application, such as from the data layer to the domain layer or presentation layer. Kotlin offers two popular ways to achieve this: <strong>extension methods</strong> and <strong>mapper classes</strong>. But when should you use which approach? In this blog post, we&rsquo;ll compare both methods and demonstrate how to use them in practice.</p>
+<hr>
+<h2 id="what-are-extension-methods"><strong>What are Extension Methods?</strong></h2>
+<p>Extension methods in Kotlin are a powerful feature that allows you to add new functions to existing classes without modifying them. This makes them ideal for simple, straightforward mapping logic.</p>
+<h3 id="example-mapping-with-extension-methods"><strong>Example: Mapping with Extension Methods</strong></h3>
+<p>Here is an example where a simple DTO (Data Transfer Object) is converted to a domain model:</p>
+<pre tabindex="0"><code>// Data Transfer Object (DTO)
+data class UserDto(val id: String, val name: String)
 
-<div class="author">
-    
-    
-    <img class="author-avatar" src="/sjorsvanmierlo.nl/author_hu15352664665774320016.webp" alt="Sjors van Mierlo" width="751"
-        height="760" />
-    
-    <h2 class="author-name">Hi 👋🏻</h2>
-    <p class="author-bio">I am Sjors van Mierlo a Java and Kotlin developer with a passion for building maintainable software</p>
+// Domain model
+data class User(val userId: String, val fullName: String)
+
+// Extension Method for mapping
+fun UserDto.toDomainModel(): User {
+    return User(
+        userId = this.id,
+        fullName = this.name
+    )
+}
+
+// Usage
+fun main() {
+    val userDto = UserDto(id = &#34;123&#34;, name = &#34;John Doe&#34;)
+    val user = userDto.toDomainModel()
+    println(user) // Output: User(userId=123, fullName=John Doe)
+}
+</code></pre><h3 id="advantages-of-extension-methods"><strong>Advantages of Extension Methods</strong></h3>
+<ul>
+<li>
+<p><strong>Compact and readable</strong>: Less boilerplate code.</p>
+</li>
+<li>
+<p><strong>Scoped</strong>: Mapping logic is defined close to the model.</p>
+</li>
+<li>
+<p><strong>Lightweight</strong>: No need for additional classes.</p>
+</li>
+</ul>
+<hr>
+<h2 id="what-are-mapper-classes"><strong>What are Mapper Classes?</strong></h2>
+<p>A mapper class is a separate component dedicated to converting data. This approach follows the <strong>Single Responsibility Principle</strong> (SRP) and is ideal for more complex or reusable mappings.</p>
+<h3 id="example-mapping-with-a-mapper-class"><strong>Example: Mapping with a Mapper Class</strong></h3>
+<p>Here is an example of a mapper class:</p>
+<pre tabindex="0"><code>// Data Transfer Object (DTO)
+data class UserDto(val id: String, val name: String)
+
+// Domain model
+data class User(val userId: String, val fullName: String)
+
+// Mapper Class
+class UserMapper {
+    fun mapToDomain(userDto: UserDto): User {
+        return User(
+            userId = userDto.id,
+            fullName = userDto.name
+        )
+    }
+}
+
+// Usage
+fun main() {
+    val userDto = UserDto(id = &#34;123&#34;, name = &#34;John Doe&#34;)
+    val mapper = UserMapper()
+    val user = mapper.mapToDomain(userDto)
+    println(user) // Output: User(userId=123, fullName=John Doe)
+}
+</code></pre><h3 id="advantages-of-mapper-classes"><strong>Advantages of Mapper Classes</strong></h3>
+<ul>
+<li>
+<p><strong>Scalability</strong>: Ideal for complex mappings.</p>
+</li>
+<li>
+<p><strong>Reusability</strong>: Mapping logic can be easily shared.</p>
+</li>
+<li>
+<p><strong>Testability</strong>: Easy to unit test without depending on specific objects.</p>
+</li>
+<li>
+<p><strong>Architectural consistency</strong>: Keeps your codebase organized in larger projects.</p>
+</li>
+</ul>
+<hr>
+<h2 id="when-to-use-what"><strong>When to Use What?</strong></h2>
+<p>The choice between extension methods and mapper classes depends on the complexity of your project and your architectural requirements:</p>
+<h3 id="use-extension-methods">Use Extension Methods:</h3>
+<ul>
+<li>
+<p>For simple, direct mappings.</p>
+</li>
+<li>
+<p>When your codebase is small, and you want to minimize overhead.</p>
+</li>
+</ul>
+<h3 id="use-mapper-classes">Use Mapper Classes:</h3>
+<ul>
+<li>
+<p>For complex mappings or mappings dependent on external sources (e.g., configurations).</p>
+</li>
+<li>
+<p>When reusability and testability are key factors.</p>
+</li>
+<li>
+<p>In larger projects where clear separation of responsibilities is needed.</p>
+</li>
+</ul>
+<hr>
+<h2 id="conclusion"><strong>Conclusion</strong></h2>
+<p>The choice between extension methods and mapper classes depends on the context of your project. For simple mappings, extension methods are quick and effective. For larger, more complex projects, mapper classes offer better scalability, reusability, and testability.</p>
+<p>By experimenting with both approaches, you can determine what works best for your codebase. Happy coding! 🚀</p>
+
+            </div>
+        </article></main>
 </div>
-        <main aria-label="Content">
-            <h3 class="posts-item-note" aria-label="Recent Posts"></h3>
-            
-            
-            
-            
-            <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/sjorsvanmierlo.nl/posts/mapping-extension-methods-vs-mapper-classes/">Kotlin extension methods vs mapper classes for data transformation</a>
-    </h4>
-    
-    
-    
-    <time class="post-item-meta" datetime="2025-01-16T12:00:00&#43;0200">
-        16 Jan 2025
-        
-    </time>
-</article>
-
-            
-            <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/sjorsvanmierlo.nl/posts/the-advantages-of-using-modules-in-your-android-project/">The advantages of using modules in your Android project</a>
-    </h4>
-    
-    
-    
-    <time class="post-item-meta" datetime="2024-01-01T20:55:57&#43;0200">
-        1 Jan 2024
-        
-    </time>
-</article>
-
-            
-            
-        </main>
-    </div><footer class="footer">
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
@@ -223,5 +345,4 @@ stroke-linejoin="round" class="feather feather-home">
     
 
 </body>
-
 </html>

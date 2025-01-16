@@ -2,21 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Sjors van Mierlo</title>
-    <link>http://localhost:1313/posts/</link>
+    <link>http://localhost:1313/sjorsvanmierlo.nl/posts/</link>
     <description>Recent content in Posts on Sjors van Mierlo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jan 2024 20:55:57 +0200</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Jan 2025 12:00:00 +0200</lastBuildDate><atom:link href="http://localhost:1313/sjorsvanmierlo.nl/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kotlin extension methods vs mapper classes for data transformation</title>
+      <link>http://localhost:1313/sjorsvanmierlo.nl/posts/mapping-extension-methods-vs-mapper-classes/</link>
+      <pubDate>Thu, 16 Jan 2025 12:00:00 +0200</pubDate>
+      
+      <guid>http://localhost:1313/sjorsvanmierlo.nl/posts/mapping-extension-methods-vs-mapper-classes/</guid>
+      
+      <description>&lt;hr&gt;
+&lt;p&gt;As an Android Developer like me, you&amp;rsquo;re likely familiar with the concept of data mapping: converting data between different layers of your application, such as from the data layer to the domain layer or presentation layer. Kotlin offers two popular ways to achieve this: &lt;strong&gt;extension methods&lt;/strong&gt; and &lt;strong&gt;mapper classes&lt;/strong&gt;. But when should you use which approach? In this blog post, we&amp;rsquo;ll compare both methods and demonstrate how to use them in practice.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>The advantages of using modules in your Android project</title>
-      <link>http://localhost:1313/posts/the-advantages-of-using-modules-in-your-android-project/</link>
+      <link>http://localhost:1313/sjorsvanmierlo.nl/posts/the-advantages-of-using-modules-in-your-android-project/</link>
       <pubDate>Mon, 01 Jan 2024 20:55:57 +0200</pubDate>
       
-      <guid>http://localhost:1313/posts/the-advantages-of-using-modules-in-your-android-project/</guid>
+      <guid>http://localhost:1313/sjorsvanmierlo.nl/posts/the-advantages-of-using-modules-in-your-android-project/</guid>
       
-      <description>This article will show you how to add and use multiple modules in your Android project. First, let&amp;rsquo;s explore the benefits of multi-module projects.
-Advantages Modularity and maintainability Creating smaller, specialized modules make your codebase easier to manage and maintain. For example, feature modules are simpler to understand, test, and update.
-Code reusability Modules promote code reusability by allowing you to encapsulate common functionalities or components. You can reuse these modules in different app sections, saving time and preventing duplicate code.</description>
+      <description>&lt;hr&gt;
+&lt;p&gt;This article will show you how to add and use multiple modules in your Android project. First, let&amp;rsquo;s explore the benefits of multi-module projects.&lt;/p&gt;
+&lt;h1 id=&#34;advantages&#34;&gt;Advantages&lt;/h1&gt;
+&lt;h2 id=&#34;modularity-and-maintainability&#34;&gt;Modularity and maintainability&lt;/h2&gt;
+&lt;p&gt;Creating smaller, specialized modules make your codebase easier to manage and maintain. For example, feature modules are simpler to understand, test, and update.&lt;/p&gt;
+&lt;h2 id=&#34;code-reusability&#34;&gt;Code reusability&lt;/h2&gt;
+&lt;p&gt;Modules promote code reusability by allowing you to encapsulate common functionalities or components. You can reuse these modules in different app sections, saving time and preventing duplicate code.&lt;/p&gt;</description>
       
     </item>
     

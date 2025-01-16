@@ -53,3 +53,8 @@ url = "https://instagram.com/sjorsvanmierlo"
 [[params.socialIcons]]
 name = "linkedin"
 url = "https://linkedin.com/in/sjorsvanmierlo"
+
+#Syntax highlighting
+[markup]
+  [markup.highlight]
+    noClasses =  false
